@@ -2,6 +2,12 @@
 
 A React application demonstrating seamless participant room switching using [VideoSDK](https://videosdk.live/) React SDK. This demo showcases both normal room switching and Media Relay functionality.
 
+
+
+https://github.com/user-attachments/assets/e98c8fd1-c1bc-4058-b84c-cd6a6834a45e
+
+
+
 ## Features
 
 - **Two-Room Setup**: Room A and Room B with VideoSDK (created automatically)
@@ -93,26 +99,6 @@ switchTo({
 ```
 
 **Note:** The current implementation primarily uses the MeetingProvider re-initialization method for consistency across both host and participant modes.
-
-### Architecture
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                     MeetingProvider                         │
-│  ┌─────────────────────────────────────────────────────────┐│
-│  │                    MeetingView                          ││
-│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ││
-│  │  │ Room A       │  │  leave() +   │  │ Room B       │  ││
-│  │  │ (Active)     │◄─┤  re-init     ├─►│ (Target)     │  ││
-│  │  └──────────────┘  └──────────────┘  └──────────────┘  ││
-│  │                                                         ││
-│  │  ┌─────────────────────────────────────────────────────┐││
-│  │  │             MeetingControls                         │││
-│  │  │  [Mic] [Camera] [Switch Room] [Media Relay] [Leave] │││
-│  │  └─────────────────────────────────────────────────────┘││
-│  └─────────────────────────────────────────────────────────┘│
-└─────────────────────────────────────────────────────────────┘
-```
 
 ### Room Setup
 
